@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: ES3GlobalReferences
   m_EditorClassIdentifier: 
   refId:
-    _Keys: []
-    _Values: 
+    _Keys:
+    - {fileID: 11500000, guid: 9a83408fcc9044c4fbc7e5d09a369ab6, type: 3}
+    - {fileID: 11500000, guid: 9107aee0ced90422da95f0b31680501f, type: 3}
+    - {fileID: 3996223534328775551, guid: a23ef71c47751486499233ef77b8cc3a, type: 3}
+    - {fileID: 4649562588770273459, guid: a23ef71c47751486499233ef77b8cc3a, type: 3}
+    _Values: 0987d0eef9be47181d601b6ce4ad330017da882d40c60412a347ddcbbdc69959
