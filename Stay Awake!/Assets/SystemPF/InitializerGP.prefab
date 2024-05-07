@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5608436614865225705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2585819817301817451}
+  - component: {fileID: 799952832280999705}
+  m_Layer: 0
+  m_Name: InitializerGP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2585819817301817451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608436614865225705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.27519375, y: -0.14152335, z: -0.005907932}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799952832280999705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608436614865225705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc858c07a11c4f5e933aef34b1b7113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squares:
+  - {fileID: 11400000, guid: c6b0840ea574749e4ac832551ad564b8, type: 2}
+  - {fileID: 11400000, guid: a160753e769134a03a2b5cc5842287df, type: 2}
+  - {fileID: 11400000, guid: c1a0367f966a6425fa139581c0d4f043, type: 2}
+  - {fileID: 11400000, guid: e84e716dca83842f488864cc9123586b, type: 2}
+  - {fileID: 11400000, guid: 26e88ed6bfce74592a033359934459af, type: 2}
+  - {fileID: 11400000, guid: e2c83bad58fdf4af893c63baa91553b3, type: 2}
+  - {fileID: 11400000, guid: 4ef695251571d4e97b72d5fae7b6af07, type: 2}
+  - {fileID: 11400000, guid: dcdf79ad04bba4c048a9da1b02f8c6f5, type: 2}
+  - {fileID: 11400000, guid: 6e6280b6d037c4648a1fe848bc6ec6d4, type: 2}
+  gridPositions: {fileID: 11400000, guid: 7ce76d415d40842c488dcd67480df3e8, type: 2}
+  playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
+  squarePrefab: {fileID: 3774610207815360675, guid: f509517f800c54eadac9023419964e1a, type: 3}
+  playerPrefab: {fileID: 2143680987651198404, guid: b004a89f0f6164d7e9d9fce099904506, type: 3}
+  currentPlayer: {fileID: 0}
+  squareSpawnDelay: 0.2
+  startedPF:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 13d5f6e4ea4bd4be7a867e607ba6d49a, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
