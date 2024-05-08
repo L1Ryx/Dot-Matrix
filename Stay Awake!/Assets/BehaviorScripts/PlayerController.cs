@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("GameObject Refs")] 
     public GameObject thisPlayer;
+
+    [Header("Event Refs")]
+    [SerializeField] private UnityEvent updateEnergy;
     
 
     private void Awake()
@@ -76,5 +79,23 @@ public class PlayerController : MonoBehaviour
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         // Do something when the move keys are released
+    }
+
+    public void AddEnergy(int num) {
+        playerState.currentEnergy += num;
+        if (playerState.currentEnergy > playerState.maxEnergySlots) {
+            playerState.currentEnergy = playerState.maxEnergySlots;
+        }
+
+        updateEnergy.Invoke();
+    }
+
+    public void MinusEnergy(int num) {
+        playerState.currentEnergy -= num;
+        if (playerState.currentEnergy < 0) {
+            playerState.currentEnergy = 0;
+        }
+
+        updateEnergy.Invoke();
     }
 }

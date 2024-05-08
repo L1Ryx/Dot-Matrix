@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904867302252558531}
   - component: {fileID: 8768230406229005210}
+  - component: {fileID: -5414241116232816491}
   m_Layer: 0
   m_Name: EnergyBar
   m_TagString: Untagged
@@ -49,3 +50,31 @@ MonoBehaviour:
   energySlotPrefab: {fileID: 2785425738012853630, guid: c2de1a61cde4e4c9fbafc2784b4a7b40, type: 3}
   emptySprite: {fileID: 21300000, guid: 411c505b4a5ff42d28427b95c574842f, type: 3}
   filledSprite: {fileID: 21300000, guid: e24696c40dc3b402e872f776246d7b29, type: 3}
+--- !u!114 &-5414241116232816491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730751730073204288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8e422b70a50c24985b7bb89a621ce3d8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8768230406229005210}
+        m_TargetAssemblyTypeName: EnergyBar, Assembly-CSharp
+        m_MethodName: UpdateEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

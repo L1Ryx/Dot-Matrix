@@ -39,4 +39,15 @@ public class EnergyBar : MonoBehaviour
             }
         }
     }
+
+    public void UpdateEnergy() {
+        for (int i = 0; i < playerState.maxEnergySlots; i++) {
+            Vector2 spawnPos = energySlotPositions.GetSlotPosition(i + 1);
+            if (i + 1 <= playerState.currentEnergy) {
+                slots[i].GetComponent<SpriteRenderer>().sprite = filledSprite;
+            } else {
+                slots[i].GetComponent<SpriteRenderer>().sprite = emptySprite;
+            }
+        }
+    }
 }
