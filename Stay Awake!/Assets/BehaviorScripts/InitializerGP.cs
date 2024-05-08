@@ -11,11 +11,14 @@ public class InitializerGP : MonoBehaviour
     [SerializeField] private Square[] squares;
     [SerializeField] private GridPositions gridPositions;
     [SerializeField] private PlayerState playerState;
+    [SerializeField] private EnergySlotPositions energySlotPositions;
 
     [Header("GameObject Refs")]
     [SerializeField] private GameObject squarePrefab;
     [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject energyBarPrefab;
     public GameObject currentPlayer;
+    public GameObject currentEnergyBar;
 
     [Header("Settings")]
     [SerializeField] private float squareSpawnDelay = 0;
@@ -33,7 +36,7 @@ public class InitializerGP : MonoBehaviour
     private void InitializeGame()
     {
         DeactivatePlayer();
-        InitializeSquares(); // calls InitializePlayer()
+        InitializeSquares(); // calls InitializePlayer() and InitializeEnergyBar()
     }
 
     private void DeactivatePlayer()
@@ -62,12 +65,19 @@ public class InitializerGP : MonoBehaviour
     {
         playerState.onRow = gridPositions.centerRow;
         playerState.onCol = gridPositions.centerCol;
+        playerState.currentEnergy = playerState.startingEnergy;
 
         Vector2 playerSpawnPos = gridPositions.GetSquarePos(playerState.onRow, playerState.onCol);
         currentPlayer = Instantiate(playerPrefab, playerSpawnPos, Quaternion.identity);
         currentPlayer.GetComponent<PlayerController>().thisPlayer = currentPlayer;
         playerState.isActive = true;
 
+        InitializeEnergyBar();
+    }
+
+    private void InitializeEnergyBar()
+    {
+        currentEnergyBar = Instantiate(energyBarPrefab, energySlotPositions.centerPos, Quaternion.identity);
         startedPF.Invoke();
     }
 }

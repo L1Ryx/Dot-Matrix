@@ -56,8 +56,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e6280b6d037c4648a1fe848bc6ec6d4, type: 2}
   gridPositions: {fileID: 11400000, guid: 7ce76d415d40842c488dcd67480df3e8, type: 2}
   playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
+  energySlotPositions: {fileID: 0}
   squarePrefab: {fileID: 3774610207815360675, guid: f509517f800c54eadac9023419964e1a, type: 3}
   playerPrefab: {fileID: 2143680987651198404, guid: b004a89f0f6164d7e9d9fce099904506, type: 3}
+  energyBarPrefab: {fileID: 6730751730073204288, guid: def56fad934854061b26dccc763a1f93, type: 3}
   currentPlayer: {fileID: 0}
   squareSpawnDelay: 0.2
   startedPF:
