@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfc626c63fb14b0ca9c797329722c8d, type: 3}
   m_Name: PlayerState
   m_EditorClassIdentifier: 
-  onRow: 2
-  onCol: 2
+  onRow: 3
+  onCol: 3
   maxEnergySlots: 5
   startingEnergy: 3
   currentEnergy: 0
