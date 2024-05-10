@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3805953188141279304}
   - component: {fileID: 2407084141449166719}
   - component: {fileID: -4821217779710636674}
+  - component: {fileID: 6562535489277591289}
+  - component: {fileID: -4806917614052072439}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -130,13 +132,23 @@ MonoBehaviour:
   square: {fileID: 0}
   playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
   gameplayTimer: {fileID: 0}
-  anyBallPrefab: {fileID: 3330523338582982924, guid: 05fbc350640ee45dfa4fa60d42cdc393, type: 3}
-  energyBallPrefab: {fileID: 7610390101228367227, guid: 107a2d8f2a8a04da78489ef81e2d3784, type: 3}
-  enemyBallPrefab: {fileID: 506885102566146990, guid: 1613f9cfca6ba45d5b603fcd68eb2c72, type: 3}
-  currentBalls: []
-  xOffset: 0.4
-  blinks: 2
-  ballLastTimeFactor: 5
+  ballPrefab: {fileID: 3435325149961910904, guid: cd37f19b88de04ea5bdd25fa35a60698, type: 3}
+  currentBallObj: {fileID: 0}
+  updateEnergy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8e422b70a50c24985b7bb89a621ce3d8, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-4821217779710636674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +165,122 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: UpdateHasPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: TestSpawnBall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: InitializeSquare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: UpdatePlayerEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6562535489277591289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774610207815360675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4b8e76350ec6b4b6eba697e9e02699ed, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: UpdatePlayerEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: UpdateHasPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-4806917614052072439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774610207815360675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 47bd2e3cd0b594ae99e2fe41d8262ca5, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2407084141449166719}
+        m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
+        m_MethodName: UpdatePlayerEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2407084141449166719}
         m_TargetAssemblyTypeName: SquareController, Assembly-CSharp
         m_MethodName: UpdateHasPlayer

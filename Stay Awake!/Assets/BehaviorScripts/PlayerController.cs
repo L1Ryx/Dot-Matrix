@@ -13,12 +13,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("GameEvent Refs")]
     [SerializeField] private UnityEvent playerMoved;
+    [SerializeField] private UnityEvent updateEnergy;
 
     [Header("GameObject Refs")] 
     public GameObject thisPlayer;
 
-    [Header("Event Refs")]
-    [SerializeField] private UnityEvent updateEnergy;
     
 
     private void Awake()
@@ -61,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
+        
         Vector2 inputVector = context.ReadValue<Vector2>();
         if(inputVector.x == 1 && playerState.onCol != gridPositions.maxCol) {
             playerState.onCol++;
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         
         thisPlayer.transform.position = gridPositions.GetSquarePos(playerState.onRow, playerState.onCol);
         playerMoved.Invoke();
+        updateEnergy.Invoke();
     }
 
     private void OnMoveCanceled(InputAction.CallbackContext context)
@@ -81,21 +82,21 @@ public class PlayerController : MonoBehaviour
         // Do something when the move keys are released
     }
 
-    public void AddEnergy(int num) {
-        playerState.currentEnergy += num;
-        if (playerState.currentEnergy > playerState.maxEnergySlots) {
-            playerState.currentEnergy = playerState.maxEnergySlots;
-        }
+    // public void AddEnergy(int num) {
+    //     playerState.currentEnergy += num;
+    //     if (playerState.currentEnergy > playerState.maxEnergySlots) {
+    //         playerState.currentEnergy = playerState.maxEnergySlots;
+    //     }
 
-        updateEnergy.Invoke();
-    }
+    //     updateEnergy.Invoke();
+    // }
 
-    public void MinusEnergy(int num) {
-        playerState.currentEnergy -= num;
-        if (playerState.currentEnergy < 0) {
-            playerState.currentEnergy = 0;
-        }
+    // public void MinusEnergy(int num) {
+    //     playerState.currentEnergy -= num;
+    //     if (playerState.currentEnergy < 0) {
+    //         playerState.currentEnergy = 0;
+    //     }
 
-        updateEnergy.Invoke();
-    }
+    //     updateEnergy.Invoke();
+    // }
 }
