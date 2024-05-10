@@ -62,7 +62,12 @@ public class SquareController : MonoBehaviour
     }
     public void TestSpawnBall() {
         currentBallObj = Instantiate(ballPrefab, this.transform);
-        currentBallObj.GetComponent<Ball>().HandleBall(BallType.Enemy, this.gameObject);
+        if (square.squareCol % 2 == 0) {
+            currentBallObj.GetComponent<Ball>().HandleBall(BallType.Enemy, this.gameObject);
+        } else {
+            currentBallObj.GetComponent<Ball>().HandleBall(BallType.Energy, this.gameObject);
+        }
+        
     }
 
     
