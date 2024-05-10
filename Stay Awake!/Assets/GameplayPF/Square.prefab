@@ -129,6 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   square: {fileID: 0}
   playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
+  anyBall: {fileID: 3330523338582982924, guid: 05fbc350640ee45dfa4fa60d42cdc393, type: 3}
+  energyBall: {fileID: 7610390101228367227, guid: 107a2d8f2a8a04da78489ef81e2d3784, type: 3}
+  enemyBall: {fileID: 506885102566146990, guid: 1613f9cfca6ba45d5b603fcd68eb2c72, type: 3}
 --- !u!114 &-4821217779710636674
 MonoBehaviour:
   m_ObjectHideFlags: 0
