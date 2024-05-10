@@ -57,11 +57,14 @@ MonoBehaviour:
   gridPositions: {fileID: 11400000, guid: 7ce76d415d40842c488dcd67480df3e8, type: 2}
   playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
   energySlotPositions: {fileID: 11400000, guid: 7efb45747f4544094aafd6b8d26172c8, type: 2}
+  gameplayTimer: {fileID: 11400000, guid: fe89b41936f824b9aa5279e06039814c, type: 2}
   squarePrefab: {fileID: 3774610207815360675, guid: f509517f800c54eadac9023419964e1a, type: 3}
   playerPrefab: {fileID: 2143680987651198404, guid: b004a89f0f6164d7e9d9fce099904506, type: 3}
   energyBarPrefab: {fileID: 6730751730073204288, guid: def56fad934854061b26dccc763a1f93, type: 3}
+  mainGpPrefab: {fileID: 1147192291688751215, guid: 2c6af7570aa924cf5bf582d48e4c669c, type: 3}
   currentPlayer: {fileID: 0}
   currentEnergyBar: {fileID: 0}
+  currentMainGp: {fileID: 0}
   squareSpawnDelay: 0.2
   startedPF:
     m_PersistentCalls:

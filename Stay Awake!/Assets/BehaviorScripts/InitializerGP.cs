@@ -12,22 +12,31 @@ public class InitializerGP : MonoBehaviour
     [SerializeField] private GridPositions gridPositions;
     [SerializeField] private PlayerState playerState;
     [SerializeField] private EnergySlotPositions energySlotPositions;
+    [SerializeField] private GameplayTimer gameplayTimer;
 
     [Header("GameObject Refs")]
     [SerializeField] private GameObject squarePrefab;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject energyBarPrefab;
+    [SerializeField] private GameObject mainGpPrefab;
     public GameObject currentPlayer;
     public GameObject currentEnergyBar;
+    public GameObject currentMainGp;
 
     [Header("Settings")]
     [SerializeField] private float squareSpawnDelay = 0;
+    [SerializeField] private bool setGameplayTimerToZeroAtAwake = true;
 
     [Header("Event Refs")]
     [SerializeField] private UnityEvent startedPF;
     
     
-    
+    void Awake() {
+        if (setGameplayTimerToZeroAtAwake) {
+            gameplayTimer.setTimeElapsed(0);
+        }
+    }
+
     void Start()
     {
         InitializeGame();
@@ -36,7 +45,7 @@ public class InitializerGP : MonoBehaviour
     private void InitializeGame()
     {
         DeactivatePlayer();
-        InitializeSquares(); // calls InitializePlayer() and InitializeEnergyBar()
+        InitializeSquares(); // calls InitializePlayer(), InitializeEnergyBar(), and etc.
     }
 
     private void DeactivatePlayer()
@@ -78,6 +87,16 @@ public class InitializerGP : MonoBehaviour
     private void InitializeEnergyBar()
     {
         currentEnergyBar = Instantiate(energyBarPrefab, energySlotPositions.centerPos, Quaternion.identity);
+        InitializeMainGp();
+    }
+
+    private void InitializeMainGp()
+    {
+        currentMainGp = Instantiate(mainGpPrefab, Vector2.zero, Quaternion.identity);
+        currentMainGp.GetComponent<MainGP>().squares = squares;
+        currentMainGp.GetComponent<MainGP>().gridPositions = gridPositions;
+        currentMainGp.GetComponent<MainGP>().playerState = playerState;
+        currentMainGp.GetComponent<MainGP>().gameplayTimer = gameplayTimer;
         startedPF.Invoke();
     }
 }
