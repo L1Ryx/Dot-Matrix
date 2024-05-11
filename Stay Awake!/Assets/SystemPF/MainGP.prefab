@@ -48,3 +48,10 @@ MonoBehaviour:
   squares: []
   gridPositions: {fileID: 0}
   playerState: {fileID: 0}
+  squareObjs: []
+  startTime: 0
+  ballSpeedMultiplier: 1
+  ballSpeedIncreaseFactor: 0.1
+  baseTimeBeforeNextSpawnRound: 10
+  energyBallCount: 2
+  enemyBallCount: 3

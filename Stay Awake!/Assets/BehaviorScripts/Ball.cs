@@ -23,6 +23,7 @@ public class Ball : MonoBehaviour
 
     [Header("Settings")]    
     [SerializeField] private float speed;
+    [SerializeField] private float adjSpeed;
     [SerializeField] private int blinkCount;
     [SerializeField] private float durationFactor = 10;
     
@@ -39,9 +40,11 @@ public class Ball : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-    public void HandleBall(BallType type, GameObject parentSq) {
+    public void HandleBall(BallType type, GameObject parentSq, float speedMultiplier) {
         ballType = type;
         parentSquare = parentSq;
+        adjSpeed = speed * speedMultiplier;
+        
 
         StartCoroutine(BallLifecycle());
     }
@@ -49,7 +52,7 @@ public class Ball : MonoBehaviour
     private IEnumerator BallLifecycle() {
         // Initial blinking with anyBallSprite
         sr.sprite = anyBallSprite;
-        yield return StartCoroutine(BlinkBall(blinkCount, 1 / speed));
+        yield return StartCoroutine(BlinkBall(blinkCount, 1 / adjSpeed));
 
         ballSpawn.Invoke();
         // Set the sprite and ballValue based on the ball type
@@ -68,10 +71,10 @@ public class Ball : MonoBehaviour
         }
 
         // Duration the ball should last
-        yield return new WaitForSeconds(durationFactor / speed);
+        yield return new WaitForSeconds(durationFactor / adjSpeed);
 
         // Blink again before destruction
-        yield return StartCoroutine(BlinkBall(blinkCount, 1 / speed));
+        yield return StartCoroutine(BlinkBall(blinkCount, 1 / adjSpeed));
 
         // Destroy the ball object
         parentSquare.GetComponent<SquareController>().square.ballValue = 0;

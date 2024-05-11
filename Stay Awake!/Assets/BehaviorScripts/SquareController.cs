@@ -60,14 +60,13 @@ public class SquareController : MonoBehaviour
             playerState.currentEnergy = 0;
         }
     }
-    public void TestSpawnBall() {
+    public void TestSpawnBall() { // TESTING ONLY - NOT USUALLY CALLED
+        // empty
+    }
+
+    public void SpawnBall(BallType type, float speedMultiplier) {
         currentBallObj = Instantiate(ballPrefab, this.transform);
-        if (square.squareCol % 2 == 0) {
-            currentBallObj.GetComponent<Ball>().HandleBall(BallType.Enemy, this.gameObject);
-        } else {
-            currentBallObj.GetComponent<Ball>().HandleBall(BallType.Energy, this.gameObject);
-        }
-        
+        currentBallObj.GetComponent<Ball>().HandleBall(type, this.gameObject, speedMultiplier);
     }
 
     

@@ -22,6 +22,7 @@ public class InitializerGP : MonoBehaviour
     public GameObject currentPlayer;
     public GameObject currentEnergyBar;
     public GameObject currentMainGp;
+    public List<GameObject> squareObjs = new List<GameObject>();
 
     [Header("Settings")]
     [SerializeField] private float squareSpawnDelay = 0;
@@ -59,16 +60,19 @@ public class InitializerGP : MonoBehaviour
     }
 
     private IEnumerator DelayedSquareCreation() {
-        for (int i = 0; i < squares.Length; i++) {
-            Vector2 squareSpawnPos = gridPositions.GetSquarePos(squares[i].squareRow, squares[i].squareCol);
-            GameObject squareObj = Instantiate(squarePrefab, squareSpawnPos, Quaternion.identity);
-            squareObj.GetComponent<SquareController>().square = squares[i];
+    for (int i = 0; i < squares.Length; i++) {
+        Vector2 squareSpawnPos = gridPositions.GetSquarePos(squares[i].squareRow, squares[i].squareCol);
+        GameObject newSquare = Instantiate(squarePrefab, squareSpawnPos, Quaternion.identity); // Create the new square GameObject
+        newSquare.GetComponent<SquareController>().square = squares[i]; // Assign the ScriptableObject to the controller
 
-            yield return new WaitForSeconds(squareSpawnDelay);
-        }
+        squareObjs.Add(newSquare); // Add the new GameObject to the list
 
-        InitializePlayer();
+        yield return new WaitForSeconds(squareSpawnDelay);
     }
+
+    InitializePlayer();
+}
+
 
     private void InitializePlayer()
     {
@@ -97,6 +101,7 @@ public class InitializerGP : MonoBehaviour
         currentMainGp.GetComponent<MainGP>().gridPositions = gridPositions;
         currentMainGp.GetComponent<MainGP>().playerState = playerState;
         currentMainGp.GetComponent<MainGP>().gameplayTimer = gameplayTimer;
+        currentMainGp.GetComponent<MainGP>().squareObjs = this.squareObjs;
         startedPF.Invoke();
     }
 }
