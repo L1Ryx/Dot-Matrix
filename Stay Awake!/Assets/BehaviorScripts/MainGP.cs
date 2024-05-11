@@ -24,6 +24,8 @@ public class MainGP : MonoBehaviour
     public float baseTimeBeforeNextSpawnRound;
     public int energyBallCount;
     public int enemyBallCount;
+    public int roundCounter = 0;
+    public int roundsBeforeIncrease;
     
     void Awake() {
         Initialize();
@@ -34,12 +36,16 @@ public class MainGP : MonoBehaviour
         // Wait for the initial grace period before starting the first round
         yield return new WaitForSeconds(baseTimeBeforeNextSpawnRound / 2);
 
-        while (true) // Loop to continue spawning rounds
+        while (true)  // Loop to continue spawning rounds
         {
             SpawnWave();
 
-            // Increase the speed multiplier logarithmically
-            ballSpeedMultiplier += Mathf.Log(ballSpeedMultiplier + ballSpeedIncreaseFactor);
+            // Increase the speed multiplier logarithmically every few rounds
+            if (++roundCounter % roundsBeforeIncrease == 0)
+            {
+                ballSpeedMultiplier += Mathf.Log(ballSpeedMultiplier + ballSpeedIncreaseFactor);
+                roundCounter = 0;  // Reset counter after increase
+            }
 
             // Calculate the time before the next spawn round
             float timeBeforeNextRound = baseTimeBeforeNextSpawnRound / ballSpeedMultiplier;
