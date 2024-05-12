@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
         DisableControls();
     }
 
-
+    public void AddPoints(int num) {
+        playerState.currentPoints += num;
+    }
 
     private void EnableControls()
     {

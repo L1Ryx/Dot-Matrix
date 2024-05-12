@@ -79,6 +79,7 @@ public class InitializerGP : MonoBehaviour
         playerState.onRow = gridPositions.centerRow;
         playerState.onCol = gridPositions.centerCol;
         playerState.currentEnergy = playerState.startingEnergy;
+        playerState.currentPoints = 0;
 
         Vector2 playerSpawnPos = gridPositions.GetSquarePos(playerState.onRow, playerState.onCol);
         currentPlayer = Instantiate(playerPrefab, playerSpawnPos, Quaternion.identity);

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2033671220040576933}
   - component: {fileID: 5061309623121267751}
   - component: {fileID: 6478754009138943181}
+  - component: {fileID: 5210836248993380470}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -130,3 +131,31 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   thisPlayer: {fileID: 0}
+--- !u!114 &5210836248993380470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143680987651198404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4b460b40f2c684f7fb61ef0c503300fd, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6478754009138943181}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
