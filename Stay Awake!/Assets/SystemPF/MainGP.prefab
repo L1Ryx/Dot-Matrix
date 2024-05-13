@@ -53,7 +53,7 @@ MonoBehaviour:
   ballSpeedMultiplier: 1
   ballSpeedIncreaseFactor: 0.1
   baseTimeBeforeNextSpawnRound: 7
-  energyBallCount: 2
-  enemyBallCount: 3
+  energyBallCount: 1
+  enemyBallCount: 4
   roundCounter: 0
   roundsBeforeIncrease: 3
