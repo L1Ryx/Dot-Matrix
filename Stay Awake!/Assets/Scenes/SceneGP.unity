@@ -1002,8 +1002,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 799952832280999705, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
-      propertyPath: setGameplayTimerToZeroAtAwake
-      value: 1
+      propertyPath: squareSpawnDelay
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2585819817301817451, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
       propertyPath: m_LocalPosition.x
