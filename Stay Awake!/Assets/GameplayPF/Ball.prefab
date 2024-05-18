@@ -50,8 +50,9 @@ MonoBehaviour:
   enemyBallSprite: {fileID: 21300000, guid: 00dc5e2d3c5e24255ae80f8fba82cbc4, type: 3}
   ballType: 0
   speed: 4
+  adjSpeed: 0
   blinkCount: 2
-  durationFactor: 10
+  durationFactor: 9
   sr: {fileID: 0}
   parentSquare: {fileID: 0}
   ballSpawn:
