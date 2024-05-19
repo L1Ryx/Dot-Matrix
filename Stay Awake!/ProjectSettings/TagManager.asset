@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: GameplayerLayer
+    uniqueID: 920010373
+    locked: 0
+  - name: UILayer
+    uniqueID: 4223996645
+    locked: 0
