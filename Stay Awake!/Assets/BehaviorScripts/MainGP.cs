@@ -27,7 +27,10 @@ public class MainGP : MonoBehaviour
     public int minEnergyBallCount;  // Minimum number of energy balls to spawn
     public int maxEnergyBallCount;  // Maximum number of energy balls to spawn
     public int roundsBeforeIncrease = 5;  // Number of rounds before increasing speed multiplier
+    public float timeCapForSpeedIncrease;  // Time cap in seconds after which speed will no longer increase
     private int roundCounter = 0;  // Tracks the number of rounds since last speed increase
+    private float totalTimeElapsed = 0;  // Tracks the total time elapsed since the start of the game
+
 
 
 
@@ -45,18 +48,21 @@ public class MainGP : MonoBehaviour
         {
             SpawnWave();
 
-            // Increase the speed multiplier logarithmically every few rounds
-            if (++roundCounter % roundsBeforeIncrease == 0)
+            // Calculate the time before the next spawn round
+            float timeBeforeNextRound = baseTimeBeforeNextSpawnRound / ballSpeedMultiplier;
+            yield return new WaitForSeconds(timeBeforeNextRound);
+
+            totalTimeElapsed += timeBeforeNextRound;  // Update the total elapsed time
+
+            // Increase the speed multiplier logarithmically every few rounds if below the time cap
+            if (totalTimeElapsed < timeCapForSpeedIncrease && ++roundCounter % roundsBeforeIncrease == 0)
             {
                 ballSpeedMultiplier += Mathf.Log(ballSpeedMultiplier + ballSpeedIncreaseFactor);
                 roundCounter = 0;  // Reset counter after increase
             }
-
-            // Calculate the time before the next spawn round
-            float timeBeforeNextRound = baseTimeBeforeNextSpawnRound / ballSpeedMultiplier;
-            yield return new WaitForSeconds(timeBeforeNextRound);
         }
     }
+
 
 
     private void SpawnWave()

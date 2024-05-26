@@ -57,4 +57,5 @@ MonoBehaviour:
   maxTotalBallCount: 8
   minEnergyBallCount: 0
   maxEnergyBallCount: 1
-  roundsBeforeIncrease: 4
+  roundsBeforeIncrease: 1
+  timeCapForSpeedIncrease: 30
