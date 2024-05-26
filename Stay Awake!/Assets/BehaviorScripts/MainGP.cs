@@ -22,11 +22,13 @@ public class MainGP : MonoBehaviour
     public float ballSpeedMultiplier;
     public float ballSpeedIncreaseFactor;
     public float baseTimeBeforeNextSpawnRound;
-    public int totalBallCount;  // Total balls to spawn each wave
+    public int minTotalBallCount;  // Minimum total number of balls to spawn each wave
+    public int maxTotalBallCount;  // Maximum total number of balls to spawn each wave
     public int minEnergyBallCount;  // Minimum number of energy balls to spawn
     public int maxEnergyBallCount;  // Maximum number of energy balls to spawn
     public int roundsBeforeIncrease = 5;  // Number of rounds before increasing speed multiplier
     private int roundCounter = 0;  // Tracks the number of rounds since last speed increase
+
 
 
         
@@ -59,8 +61,14 @@ public class MainGP : MonoBehaviour
 
     private void SpawnWave()
     {
+        int totalBallCount = UnityEngine.Random.Range(minTotalBallCount, maxTotalBallCount + 1);
         int energyBallCount = UnityEngine.Random.Range(minEnergyBallCount, maxEnergyBallCount + 1);
         int enemyBallCount = totalBallCount - energyBallCount;
+
+        if (energyBallCount > totalBallCount) {
+            energyBallCount = totalBallCount; // Ensure energy balls don't exceed the total count
+            enemyBallCount = 0; // All balls this wave are energy balls
+        }
 
         if (squareObjs.Count < totalBallCount)
         {
