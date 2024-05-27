@@ -42,6 +42,11 @@ public class EnergyBar : MonoBehaviour
 
     public void UpdateEnergy() {
         for (int i = 0; i < playerState.maxEnergySlots; i++) {
+            if (!slots.ContainsKey(i))
+            {
+                Debug.LogError($"Key {i} not found in slots dictionary.");
+                continue;
+            }
             Vector2 spawnPos = energySlotPositions.GetSlotPosition(i + 1);
             if (i + 1 <= playerState.currentEnergy) {
                 slots[i].GetComponent<SpriteRenderer>().sprite = filledSprite;

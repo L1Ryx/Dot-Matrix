@@ -19,6 +19,7 @@ public class SquareController : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent updateEnergy;
     [SerializeField] private UnityEvent shouldAddPoints;
+    [SerializeField] private UnityEvent addEnergy;
     public void InitializeSquare() {
         square.ballValue = 0;
         square.hasPlayer = false;
@@ -54,6 +55,7 @@ public class SquareController : MonoBehaviour
             playerState.currentEnergy = playerState.maxEnergySlots;
         }
         shouldAddPoints.Invoke();
+        addEnergy.Invoke();
     }
 
     private void MinusEnergy(int num) {

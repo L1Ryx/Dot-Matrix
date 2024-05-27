@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayTimer: {fileID: 11400000, guid: fe89b41936f824b9aa5279e06039814c, type: 2}
   squares: []
-  gridPositions: {fileID: 0}
-  playerState: {fileID: 0}
+  gridPositions: {fileID: 11400000, guid: 7ce76d415d40842c488dcd67480df3e8, type: 2}
+  playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
   squareObjs: []
   startTime: 0
   ballSpeedMultiplier: 1

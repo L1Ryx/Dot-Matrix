@@ -52,6 +52,7 @@ public class InitializerGP : MonoBehaviour
     private void DeactivatePlayer()
     {
         playerState.isActive = false;
+        
     }
 
     private void InitializeSquares()
