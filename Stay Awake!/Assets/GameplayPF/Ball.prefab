@@ -52,7 +52,7 @@ MonoBehaviour:
   speed: 4
   adjSpeed: 0
   blinkCount: 2
-  durationFactor: 8
+  durationFactor: 9
   sr: {fileID: 0}
   parentSquare: {fileID: 0}
   ballSpawn:
