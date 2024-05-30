@@ -27,6 +27,19 @@ public class EnergyBar : MonoBehaviour
         Initialization();
     }
 
+    public void ClearSlots() {
+        // Destroy each slot GameObject and clear the dictionary
+        foreach (var slot in slots.Values) {
+            if (slot != null) {
+                Destroy(slot);
+            }
+        }
+        slots.Clear();
+
+        // DANGEROUS
+        Destroy(gameObject);
+    }
+
     private void Initialization()
     {
         for (int i = 0; i < playerState.maxEnergySlots; i++) {

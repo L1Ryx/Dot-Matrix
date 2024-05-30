@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MainGP : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class MainGP : MonoBehaviour
 
     [Header("Objects")]
     public List<GameObject> squareObjs;
+    
+    // [Header("Events")]
+    // public UnityEvent gameplayOver;
 
     [Header("Settings")]
     public float startTime = 0;
@@ -30,14 +34,25 @@ public class MainGP : MonoBehaviour
     public float timeCapForSpeedIncrease;  // Time cap in seconds after which speed will no longer increase
     private int roundCounter = 0;  // Tracks the number of rounds since last speed increase
     private float totalTimeElapsed = 0;  // Tracks the total time elapsed since the start of the game
-
-
-
-
         
     void Awake() {
         Initialize();
     }
+
+    public void Die() {
+
+        // 2. Destroy ALL balls on screen and stop ball generating
+        StopAllCoroutines(); 
+    }
+
+    public void DeleteAllSquareObjs() {
+        
+        foreach (GameObject squareObj in squareObjs) {
+            Destroy(squareObj);
+        }
+        squareObjs.Clear();
+    }
+
 
     private IEnumerator SpawnRoutine()
     {
@@ -67,6 +82,9 @@ public class MainGP : MonoBehaviour
 
     private void SpawnWave()
     {
+        if (!playerState.isActive) {
+            return;
+        }
         int totalBallCount = UnityEngine.Random.Range(minTotalBallCount, maxTotalBallCount + 1);
         int energyBallCount = UnityEngine.Random.Range(minEnergyBallCount, maxEnergyBallCount + 1);
         int enemyBallCount = totalBallCount - energyBallCount;
@@ -149,6 +167,7 @@ public class MainGP : MonoBehaviour
 
     private void Initialize()
     {
+        playerState.isActive = true;
         gameplayTimer.setTimeElapsed(startTime);
         CacheSquareControllers();
         StartCoroutine(SpawnRoutine());
@@ -171,7 +190,8 @@ public class MainGP : MonoBehaviour
 
 
     void Update() {
-        gameplayTimer.addTimeElapsed(Time.deltaTime);
-        
+        if (playerState.isActive) {
+            gameplayTimer.addTimeElapsed(Time.deltaTime);
+        }
     }
 }

@@ -15,6 +15,7 @@ public class SquareController : MonoBehaviour
     [Header("Objects")]
     public GameObject ballPrefab;
     public GameObject currentBallObj;
+    private static List<GameObject> allBalls = new List<GameObject>();
 
     [Header("Events")]
     [SerializeField] private UnityEvent updateEnergy;
@@ -34,6 +35,22 @@ public class SquareController : MonoBehaviour
         UpdatePlayerEnergy();
     }
 
+    public void DeleteAllBalls() {
+        // Destroy all balls in the list and clear it
+        foreach (GameObject ball in allBalls) {
+            if (ball != null) {
+                Destroy(ball);
+            }
+        }
+        allBalls.Clear();
+
+        // Set the ballValue of every square to 0
+        foreach (SquareController squareController in FindObjectsOfType<SquareController>()) {
+            squareController.square.ballValue = 0;
+            squareController.currentBallObj = null;
+        }
+    }
+
     public void UpdatePlayerEnergy() {
         if (square.hasPlayer && square.ballValue != 0) {
             if (square.ballValue == 1) {
@@ -43,6 +60,7 @@ public class SquareController : MonoBehaviour
             }
             square.ballValue = 0;
             if (currentBallObj != null) {
+                allBalls.Remove(currentBallObj);  // Remove from list
                 Destroy(currentBallObj);
             }
             updateEnergy.Invoke();
@@ -64,6 +82,7 @@ public class SquareController : MonoBehaviour
             playerState.currentEnergy = 0;
         }
     }
+
     public void TestSpawnBall() { // TESTING ONLY - NOT USUALLY CALLED
         // empty
     }
@@ -71,7 +90,7 @@ public class SquareController : MonoBehaviour
     public void SpawnBall(BallType type, float speedMultiplier) {
         currentBallObj = Instantiate(ballPrefab, this.transform);
         currentBallObj.GetComponent<Ball>().HandleBall(type, this.gameObject, speedMultiplier);
+        allBalls.Add(currentBallObj);  // Add to list of all balls
     }
-
     
 }

@@ -10,7 +10,7 @@ public class CanvasGP : MonoBehaviour
         ResetGPElements();
     }
 
-    void ResetGPElements() {
+    public void ResetGPElements() {
         foreach (GameObject obj in gameplayElements) {
             obj.SetActive(false);
         }

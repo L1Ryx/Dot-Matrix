@@ -9,15 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfc626c63fb14b0ca9c797329722c8d, type: 3}
-  m_Name: PlayerState
+  m_Script: {fileID: 11500000, guid: 8989ea37e624f48b3bcc2d91a669de8c, type: 3}
+  m_Name: GameplayOver
   m_EditorClassIdentifier: 
-  onRow: 1
-  onCol: 2
-  currentEnergy: 0
-  isActive: 1
-  currentPoints: 0
-  lastEarnedPoints: 0
-  maxEnergySlots: 5
-  startingEnergy: 3
-  highScore: 0

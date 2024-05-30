@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &67160037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1410,6 +1410,7 @@ GameObject:
   - component: {fileID: 552418119}
   - component: {fileID: 552418122}
   - component: {fileID: 552418120}
+  - component: {fileID: 552418123}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -1546,6 +1547,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
+  gameplayOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f2003eaca76f24f5a99b9b9d29adb3d4, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  totalBlinkTime: 3
+  blinkInterval: 0.5
 --- !u!114 &552418120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1602,6 +1620,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &552418123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552418115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 01354712544454f28b4779af32791343, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 552418119}
+        m_TargetAssemblyTypeName: ScoreText, Assembly-CSharp
+        m_MethodName: BlinkAndEndGameplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &595620842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1660,7 @@ GameObject:
   - component: {fileID: 595620845}
   - component: {fileID: 595620844}
   - component: {fileID: 595620843}
+  - component: {fileID: 595620847}
   m_Layer: 5
   m_Name: CanvasLoss
   m_TagString: Untagged
@@ -1707,6 +1754,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &595620847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595620842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da24a253316d43a0915deff453c1121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &609148790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2183,7 @@ GameObject:
   - component: {fileID: 891651469}
   - component: {fileID: 891651474}
   - component: {fileID: 891651473}
+  - component: {fileID: 891651475}
   m_Layer: 5
   m_Name: CanvasGP
   m_TagString: Untagged
@@ -2256,6 +2316,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayElements:
   - {fileID: 552418115}
+--- !u!114 &891651475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891651467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f2003eaca76f24f5a99b9b9d29adb3d4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 891651474}
+        m_TargetAssemblyTypeName: CanvasGP, Assembly-CSharp
+        m_MethodName: ResetGPElements
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &903340651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,7 +2613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &982492772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2829,7 +2917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1110299854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4049,7 +4137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2047548544
 RectTransform:
   m_ObjectHideFlags: 0

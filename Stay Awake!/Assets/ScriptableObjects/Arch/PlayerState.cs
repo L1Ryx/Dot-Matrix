@@ -11,10 +11,13 @@ public class PlayerState : ScriptableObject
     public int currentEnergy;
     public bool isActive;
     public int currentPoints;
+    public int lastEarnedPoints;
 
     [Header("Settings")]
     public int maxEnergySlots;
     public int startingEnergy;
+    [Header("Save Data")]
+    public int highScore;
     
     
     
