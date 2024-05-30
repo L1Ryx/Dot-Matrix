@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private UnityEvent playerMoved;
     [SerializeField] private UnityEvent updateEnergy;
     [SerializeField] private UnityEvent playerDied;
+    [SerializeField] private UnityEvent scoresLogged;
 
     [Header("GameObject Refs")] 
     public GameObject thisPlayer;

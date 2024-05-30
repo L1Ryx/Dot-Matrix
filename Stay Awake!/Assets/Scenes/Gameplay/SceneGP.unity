@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &67160037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1661,6 +1661,7 @@ GameObject:
   - component: {fileID: 595620844}
   - component: {fileID: 595620843}
   - component: {fileID: 595620847}
+  - component: {fileID: 595620848}
   m_Layer: 5
   m_Name: CanvasLoss
   m_TagString: Untagged
@@ -1766,6 +1767,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da24a253316d43a0915deff453c1121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lossObjects:
+  - {fileID: 2047548543}
+  - {fileID: 67160036}
+  - {fileID: 1110299853}
+  - {fileID: 982492771}
+--- !u!114 &595620848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595620842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f2003eaca76f24f5a99b9b9d29adb3d4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 595620847}
+        m_TargetAssemblyTypeName: CanvasLoss, Assembly-CSharp
+        m_MethodName: ShowLossScreen
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &609148790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,7 +2647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &982492772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2911,13 +2945,15 @@ GameObject:
   - component: {fileID: 1110299854}
   - component: {fileID: 1110299856}
   - component: {fileID: 1110299855}
+  - component: {fileID: 1110299858}
+  - component: {fileID: 1110299857}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1110299854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3034,6 +3070,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110299853}
   m_CullTransparentMesh: 1
+--- !u!114 &1110299857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110299853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c80e6aef215b7494a986926a6503d66a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1110299858}
+        m_TargetAssemblyTypeName: LastEarnedScoreText, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1110299858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110299853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852e49fcff0df462c8e7370b864029e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
 --- !u!1 &1120140494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,7 +4214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2047548544
 RectTransform:
   m_ObjectHideFlags: 0

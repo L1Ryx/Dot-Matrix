@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CanvasLoss : MonoBehaviour
 {
     [Header("Objects")]
     [SerializeField] public List<GameObject> lossObjects;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent scoresLogged;
 
     void Awake() {
         HideLossScreen();
@@ -21,6 +25,7 @@ public class CanvasLoss : MonoBehaviour
         foreach (GameObject obj in lossObjects) {
             obj.SetActive(true);
         }
+        scoresLogged.Invoke();
     }
 
     public void HideLossScreen() {
