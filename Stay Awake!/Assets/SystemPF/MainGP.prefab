@@ -51,11 +51,11 @@ MonoBehaviour:
   squareObjs: []
   startTime: 0
   ballSpeedMultiplier: 1
-  ballSpeedIncreaseFactor: 0.1
+  ballSpeedIncreaseFactor: 0.05
   baseTimeBeforeNextSpawnRound: 7
   minTotalBallCount: 3
   maxTotalBallCount: 8
   minEnergyBallCount: 0
   maxEnergyBallCount: 1
   roundsBeforeIncrease: 1
-  timeCapForSpeedIncrease: 30
+  timeCapForSpeedIncrease: 35
