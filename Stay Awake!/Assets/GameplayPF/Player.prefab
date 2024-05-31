@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -5077284908624039471}
   - component: {fileID: -7198306682374482118}
   - component: {fileID: -8055141672246401936}
+  - component: {fileID: -453182585367978825}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -267,6 +268,34 @@ MonoBehaviour:
       - m_Target: {fileID: 6478754009138943181}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: UpdateScoresAndDeletePlayerObj
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-453182585367978825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143680987651198404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8c2dc28f9878c46da8bfdd1188b0197d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6478754009138943181}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ClearPlayerState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

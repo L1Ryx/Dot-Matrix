@@ -54,14 +54,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ClearPlayerState() {
+        ES3.Save("highScore", 0);
+        playerState.highScore = ES3.Load<int>("highScore", 0);
+        
+        ES3.Save("tutorialSeen", false);
+        playerState.hasSeenTutorial = ES3.Load<bool>("tutorialSeen", false);
+        
+    }
+
     public void UpdateScoresAndDeletePlayerObj() {
         playerState.lastEarnedPoints = playerState.currentPoints;
         if (playerState.lastEarnedPoints > playerState.highScore) {
-            ES3.Save("HighScore", playerState.lastEarnedPoints);
+            ES3.Save("highScore", playerState.lastEarnedPoints);
         }
-        if (ES3.KeyExists("HighScore")) {
-            playerState.highScore = ES3.Load<int>("HighScore");
-        }
+        playerState.highScore = ES3.Load<int>("highScore", 0);
         
         playerState.currentPoints = 0;
 

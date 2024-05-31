@@ -18,7 +18,7 @@ public class PlayerState : ScriptableObject
     public int startingEnergy;
     [Header("Save Data")]
     public int highScore;
-    public int hasSeenTutorial;
+    public bool hasSeenTutorial;
     
     
     
