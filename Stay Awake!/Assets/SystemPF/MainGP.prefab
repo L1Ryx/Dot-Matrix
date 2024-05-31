@@ -53,14 +53,15 @@ MonoBehaviour:
   squareObjs: []
   startTime: 0
   ballSpeedMultiplier: 1
-  ballSpeedIncreaseFactor: 0.05
+  ballSpeedIncreaseFactor: 0.02
   baseTimeBeforeNextSpawnRound: 7
   minTotalBallCount: 3
   maxTotalBallCount: 8
   minEnergyBallCount: 0
   maxEnergyBallCount: 1
   roundsBeforeIncrease: 1
-  timeCapForSpeedIncrease: 35
+  timeCapForSpeedIncrease: 42
+  gameplayLoopTrackName: GameplayLoop
 --- !u!114 &-4967756780128157959
 MonoBehaviour:
   m_ObjectHideFlags: 0
