@@ -34,6 +34,7 @@ public class MainGP : MonoBehaviour
     public float timeCapForSpeedIncrease;  // Time cap in seconds after which speed will no longer increase
     private int roundCounter = 0;  // Tracks the number of rounds since last speed increase
     private float totalTimeElapsed = 0;  // Tracks the total time elapsed since the start of the game
+    public string gameplayLoopTrackName = "GameplayLoop";
         
     void Awake() {
         Initialize();
@@ -43,6 +44,9 @@ public class MainGP : MonoBehaviour
 
         // 2. Destroy ALL balls on screen and stop ball generating
         StopAllCoroutines(); 
+
+        // STOP MUSIC
+        MusicManager.Instance.StopMusic(gameplayLoopTrackName);
     }
 
     public void DeleteAllSquareObjs() {
@@ -170,6 +174,7 @@ public class MainGP : MonoBehaviour
     {
         playerState.isActive = true;
         gameplayTimer.setTimeElapsed(startTime);
+        MusicManager.Instance.PlayMusic(gameplayLoopTrackName);
         CacheSquareControllers();
         StartCoroutine(SpawnRoutine());
     }

@@ -14,6 +14,7 @@ public class ResetButton : MonoBehaviour
     [SerializeField] private UnityEvent gameReset;
 
     public void ResetGame(float delay) {
+        // SFXManager.Instance.PlaySound("ButtonPress");
         gameplayInitializerObj = Instantiate(gameplayInitializerPrefab);
         gameReset.Invoke();
     }

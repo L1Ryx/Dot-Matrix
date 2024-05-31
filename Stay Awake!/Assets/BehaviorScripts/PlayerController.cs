@@ -127,15 +127,19 @@ public class PlayerController : MonoBehaviour
             // Handle horizontal movement
             if (inputVector.x == 1 && playerState.onCol != gridPositions.maxCol) {
                 playerState.onCol++;
+                // SFXManager.Instance.PlaySound("Move");
             } else if (inputVector.x == -1 && playerState.onCol != 1) {
                 playerState.onCol--;
+                // SFXManager.Instance.PlaySound("Move");
             }
 
             // Handle vertical movement
             if (inputVector.y == 1 && playerState.onRow != 1) {
                 playerState.onRow--;
+                // SFXManager.Instance.PlaySound("Move");
             } else if (inputVector.y == -1 && playerState.onRow != gridPositions.maxRow) {
                 playerState.onRow++;
+                // SFXManager.Instance.PlaySound("Move");
             }
 
             // Debug.Log($"Updated position to Row: {playerState.onRow}, Col: {playerState.onCol}");

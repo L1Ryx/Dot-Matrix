@@ -30,6 +30,7 @@ public class InitializerGP : MonoBehaviour
 
     [Header("Event Refs")]
     [SerializeField] private UnityEvent startedPF;
+    [SerializeField] private UnityEvent squareCreated;
     
     
     void Awake() {
@@ -62,6 +63,7 @@ public class InitializerGP : MonoBehaviour
 
     private IEnumerator DelayedSquareCreation() {
     for (int i = 0; i < squares.Length; i++) {
+        squareCreated.Invoke();
         Vector2 squareSpawnPos = gridPositions.GetSquarePos(squares[i].squareRow, squares[i].squareCol);
         GameObject newSquare = Instantiate(squarePrefab, squareSpawnPos, Quaternion.identity); // Create the new square GameObject
         newSquare.GetComponent<SquareController>().square = squares[i]; // Assign the ScriptableObject to the controller
