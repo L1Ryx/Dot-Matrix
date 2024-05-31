@@ -66,7 +66,7 @@ MonoBehaviour:
   currentEnergyBar: {fileID: 0}
   currentMainGp: {fileID: 0}
   squareObjs: []
-  squareSpawnDelay: 0.2
+  squareSpawnDelay: 0.3
   setGameplayTimerToZeroAtAwake: 1
   startedPF:
     m_PersistentCalls:

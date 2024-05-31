@@ -51,6 +51,7 @@ public class MainGP : MonoBehaviour
             Destroy(squareObj);
         }
         squareObjs.Clear();
+        Destroy(this.gameObject); // very dangerous
     }
 
 

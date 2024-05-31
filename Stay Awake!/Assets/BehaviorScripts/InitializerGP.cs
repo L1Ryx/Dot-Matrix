@@ -105,5 +105,6 @@ public class InitializerGP : MonoBehaviour
         currentMainGp.GetComponent<MainGP>().gameplayTimer = gameplayTimer;
         currentMainGp.GetComponent<MainGP>().squareObjs = this.squareObjs;
         startedPF.Invoke();
+        Destroy(this.gameObject); // this is dangerous
     }
 }

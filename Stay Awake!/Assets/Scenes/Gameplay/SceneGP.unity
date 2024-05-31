@@ -1662,6 +1662,7 @@ GameObject:
   - component: {fileID: 595620843}
   - component: {fileID: 595620847}
   - component: {fileID: 595620848}
+  - component: {fileID: 595620849}
   m_Layer: 5
   m_Name: CanvasLoss
   m_TagString: Untagged
@@ -1772,6 +1773,21 @@ MonoBehaviour:
   - {fileID: 67160036}
   - {fileID: 1110299853}
   - {fileID: 982492771}
+  scoresLogged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c80e6aef215b7494a986926a6503d66a, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &595620848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +1813,34 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &595620849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595620842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d39df57931e204dc8a64d3615f4a9f8b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 595620847}
+        m_TargetAssemblyTypeName: CanvasLoss, Assembly-CSharp
+        m_MethodName: HideLossScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2641,6 +2685,8 @@ GameObject:
   - component: {fileID: 982492772}
   - component: {fileID: 982492774}
   - component: {fileID: 982492773}
+  - component: {fileID: 982492776}
+  - component: {fileID: 982492775}
   m_Layer: 5
   m_Name: BestText
   m_TagString: Untagged
@@ -2766,6 +2812,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982492771}
   m_CullTransparentMesh: 1
+--- !u!114 &982492775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982492771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fe20e8df82445795d511513c96455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c80e6aef215b7494a986926a6503d66a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 982492776}
+        m_TargetAssemblyTypeName: BestScoreText, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &982492776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982492771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044548a6398db427a8efa02c3aadc798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
 --- !u!1 &994880653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,6 +4295,7 @@ GameObject:
   - component: {fileID: 2047548547}
   - component: {fileID: 2047548546}
   - component: {fileID: 2047548545}
+  - component: {fileID: 2047548548}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: Untagged
@@ -4277,7 +4365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2047548546}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2047548548}
+        m_TargetAssemblyTypeName: ResetButton, Assembly-CSharp
+        m_MethodName: ResetGame
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2047548546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4316,6 +4416,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047548543}
   m_CullTransparentMesh: 1
+--- !u!114 &2047548548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047548543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52359ba9dd33b4905b0c3fac5d2f457f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: {fileID: 11400000, guid: 6cddfc543754f475f92253fbe1c0ce4f, type: 2}
+  gameplayInitializerPrefab: {fileID: 5608436614865225705, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
+  gameplayInitializerObj: {fileID: 0}
+  gameReset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d39df57931e204dc8a64d3615f4a9f8b, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2132706428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,10 +4490,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 799952832280999705, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
-      propertyPath: squareSpawnDelay
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 2585819817301817451, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27519375
@@ -4407,10 +4533,6 @@ PrefabInstance:
     - target: {fileID: 5608436614865225705, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
       propertyPath: m_Name
       value: InitializerGP
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608436614865225705, guid: 9b9bd46e02d8643c5bf3f7fc62916a68, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
