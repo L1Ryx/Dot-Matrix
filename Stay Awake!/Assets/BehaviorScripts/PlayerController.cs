@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     public void UpdateScoresAndDeletePlayerObj() {
         playerState.lastEarnedPoints = playerState.currentPoints;
-        if (playerState.lastEarnedPoints > playerState.highScore) {
+        if (playerState.lastEarnedPoints > ES3.Load<int>("highscore", 0)) {
             ES3.Save("highScore", playerState.lastEarnedPoints);
         }
         playerState.highScore = ES3.Load<int>("highScore", 0);
