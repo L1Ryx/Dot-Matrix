@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "name": "System",
+            "folderColor": {
+                "r": 0.9803921580314636,
+                "g": 0.03055916354060173,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "folderImageType": 2
+        },
+        {
+            "name": "UI",
+            "folderColor": {
+                "r": 0.4951770305633545,
+                "g": 1.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "folderImageType": 2
+        },
+        {
+            "name": "Debug",
+            "folderColor": {
+                "r": 0.0,
+                "g": 0.9725937843322754,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "folderImageType": 2
+        }
+    ]
+}
