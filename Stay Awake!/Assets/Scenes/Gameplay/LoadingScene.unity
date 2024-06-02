@@ -188,6 +188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2296626964247279175, guid: 9cefa21bbb9c144cd9e07c3469516fb1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2297542912788876430, guid: 9cefa21bbb9c144cd9e07c3469516fb1, type: 3}
       propertyPath: m_Name
       value: BackgroundGP
@@ -354,6 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingText: {fileID: 1557373606}
   sceneToLoadName: SceneGP
+  placeboTime: 2
 --- !u!1 &1261463231
 GameObject:
   m_ObjectHideFlags: 8
@@ -372,7 +377,7 @@ GameObject:
   m_IsActive: 0
 --- !u!4 &1261463232
 Transform:
-  m_ObjectHideFlags: 8
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
