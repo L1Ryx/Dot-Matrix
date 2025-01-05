@@ -1,2 +1,2 @@
-# Stay-Awake
-This project is on indefinite hiatus as of 4/22/2024.
+# Dot Matrix
+Simple mini-game about dodging dots on a grid. Game can be played [here](https://l1ryx.itch.io/dot-matrix).
